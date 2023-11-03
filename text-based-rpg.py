@@ -73,3 +73,4 @@ def game_session():
 
         
     #All the Game Code Goes here
+    #This game is a WIP or a work in progress. the base game wasn't even written yet
