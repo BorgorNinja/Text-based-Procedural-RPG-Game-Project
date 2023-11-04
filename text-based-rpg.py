@@ -2,6 +2,8 @@ import os, random, time
 Sword = 3
 Staff = 1
 Stave = 2
+level = []
+difficultyValueCondition = False
 while True:
     try:
         option = None
@@ -28,8 +30,37 @@ while True:
                     c. Quit Back to Main Menu""")
                 optionSet = input("Option Select: ")
                 if (optionSet == "a"):
-                    optionDifficulty = input("Enter 1-3 number to set Difficulty: ")
-                    print("Difficulty Set to ", optionDifficulty)
+                    while (difficultyValueCondition == False):
+                        difficultyEvalCheck = False
+                        while (difficultyEvalCheck == False):
+                            optionDifficulty = int(input("Enter 1-3 number to set Difficulty: "))
+                            if (optionDifficulty == 1):
+                                count = 0
+                                print("Difficulty set to Easy with 10 levels")
+                                while (count != 10):
+                                    print(count)
+                                    level.append(count)
+                                    count = count + 1
+                                difficultyEvalCheck = True
+                            elif (optionDifficulty == 2):
+                                count = 0
+                                print("Difficulty set to Medium with 20 levels")
+                                while (count != 20):
+                                    print(count)
+                                    level.append(count)
+                                    count = count + 1
+                                difficultyEvalCheck = True
+                            elif (optionDifficulty == 3):
+                                count = 0
+                                print("Difficulty set to Hard with 30 levels")
+                                while (count != 30):
+                                    print(count)
+                                    level.append(count)
+                                    count = count + 1
+                                difficultyEvalCheck = True
+                            else:
+                                print("Invalid")
+                        difficultyValueCondition = True
                     optionLoop = False
                 elif (optionSet == "b"):
                     while (optionLoop == True):
@@ -61,6 +92,8 @@ while True:
             print("Exception Error")
         
 def game_session():
+    #Temporary Placeholder
+    print("Game is still a work in progress so no games yet")
     character = []
     enemies = ["Slime", "Goblin","Kobold","Dragon"]
     enemySubclass = ["Great","Greater","Poisonous","Disaster","Calamity"]
@@ -70,7 +103,8 @@ def game_session():
     rolledSubclass = random.choice(enemySubclass)
     rolledEnemyBoss = rolledEnemy0 + " " + rolledSubclass
     #while (gameLoop = True):
-
+    #    print("")
+    
         
     #All the Game Code Goes here
     #This game is a WIP or a work in progress. the base game wasn't even written yet
